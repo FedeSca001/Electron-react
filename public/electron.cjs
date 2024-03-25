@@ -11,10 +11,10 @@ function createWindow() {
   const isDevPromise = import('electron-is-dev');
   isDevPromise.then(({ default: isDev }) => {
     mainWindow.loadURL(isDev ? 'http://localhost:5173' : `file://${path.join(__dirname, '../build/index.html')}`);
-    if (isDev) {
+    /*if (isDev) {
       // Abre las herramientas de desarrollo.
       mainWindow.webContents.openDevTools();
-    }
+    }*/
   }).catch(error => {
     console.error('Error al importar electron-is-dev:', error);
     // Trata el error aquí si es necesario
